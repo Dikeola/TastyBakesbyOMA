@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 45 25% 97%; /* #FAF7F0 */
+  --foreground: 20 14% 15%; /* Darker brown for text */
+  --muted: 45 15% 94%; /* Lighter cream */
+  --muted-foreground: 25 8% 45%; /* Medium brown */
+  --popover: 0 0% 100%; /* Pure white */
+  --popover-foreground: 20 14% 15%;
+  --card: 0 0% 100%; /* Pure white */
+  --card-foreground: 20 14% 15%;
+  --border: 45 15% 88%; /* Light cream border */
+  --input: 45 15% 88%;
+  --primary: 25 70% 32%; /* Bakery brown #8B4513 */
+  --primary-foreground: 45 25% 97%;
+  --secondary: 45 25% 92%; /* Bakery cream */
+  --secondary-foreground: 25 70% 32%;
+  --accent: 45 25% 92%;
+  --accent-foreground: 25 70% 32%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 25 70% 32%;
+  --radius: 0.5rem;
+  
+  /* Custom bakery colors */
+  --bakery-brown: 25 70% 32%; /* #8B4513 */
+  --bakery-cream: 45 25% 92%; /* #F4E4BC */
+  --bakery-chocolate: 25 65% 45%; /* #D2691E */
+  --bakery-off-white: 45 25% 97%; /* #FAF7F0 */
+  --bakery-green: 120 61% 34%; /* #228B22 */
+}
+
+.dark {
+  --background: 20 14% 4%;
+  --foreground: 45 25% 97%;
+  --muted: 25 8% 15%;
+  --muted-foreground: 45 15% 65%;
+  --popover: 20 14% 4%;
+  --popover-foreground: 45 25% 97%;
+  --card: 20 14% 4%;
+  --card-foreground: 45 25% 97%;
+  --border: 25 8% 15%;
+  --input: 25 8% 15%;
+  --primary: 25 70% 32%;
+  --primary-foreground: 45 25% 97%;
+  --secondary: 25 8% 15%;
+  --secondary-foreground: 45 25% 97%;
+  --accent: 25 8% 15%;
+  --accent-foreground: 45 25% 97%;
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 45 25% 97%;
+  --ring: 25 70% 32%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .text-bakery-brown {
+    color: hsl(var(--bakery-brown));
+  }
+  
+  .text-bakery-cream {
+    color: hsl(var(--bakery-cream));
+  }
+  
+  .text-bakery-chocolate {
+    color: hsl(var(--bakery-chocolate));
+  }
+  
+  .text-bakery-off-white {
+    color: hsl(var(--bakery-off-white));
+  }
+  
+  .text-bakery-green {
+    color: hsl(var(--bakery-green));
+  }
+  
+  .bg-bakery-brown {
+    background-color: hsl(var(--bakery-brown));
+  }
+  
+  .bg-bakery-cream {
+    background-color: hsl(var(--bakery-cream));
+  }
+  
+  .bg-bakery-chocolate {
+    background-color: hsl(var(--bakery-chocolate));
+  }
+  
+  .bg-bakery-off-white {
+    background-color: hsl(var(--bakery-off-white));
+  }
+  
+  .bg-bakery-green {
+    background-color: hsl(var(--bakery-green));
+  }
+  
+  .border-bakery-brown {
+    border-color: hsl(var(--bakery-brown));
+  }
+  
+  .border-bakery-cream {
+    border-color: hsl(var(--bakery-cream));
+  }
+  
+  .border-bakery-chocolate {
+    border-color: hsl(var(--bakery-chocolate));
+  }
+  
+  .hover\:bg-bakery-brown:hover {
+    background-color: hsl(var(--bakery-brown));
+  }
+  
+  .hover\:bg-bakery-chocolate:hover {
+    background-color: hsl(var(--bakery-chocolate));
+  }
+  
+  .hover\:bg-bakery-cream:hover {
+    background-color: hsl(var(--bakery-cream));
+  }
+  
+  .hover\:text-bakery-brown:hover {
+    color: hsl(var(--bakery-brown));
+  }
+  
+  .hover\:text-bakery-chocolate:hover {
+    color: hsl(var(--bakery-chocolate));
+  }
+  
+  .hover\:text-bakery-cream:hover {
+    color: hsl(var(--bakery-cream));
+  }
+}
+
+/* Custom font imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Dancing+Script:wght@400;600&display=swap');
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-source {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.font-dancing {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Smooth animations */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--bakery-cream));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--bakery-chocolate));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--bakery-brown));
+}
+
+/* Hide number input spin buttons for .no-spin */
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-spin {
+  -moz-appearance: textfield; /* Firefox */
+}
