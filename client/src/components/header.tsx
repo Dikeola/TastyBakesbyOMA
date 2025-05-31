@@ -58,16 +58,16 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
-            <div className="flex items-center space-x-2 cursor-pointer scale-[1.3]">
-              <Cake className="text-bakery-chocolate text-3xl md:text-4xl" />
-              <h1 className="font-playfair text-3xl md:text-4xl font-bold text-bakery-brown">
+            <div className="flex items-center space-x-2 cursor-pointer scale-[0.975]">
+              <Cake className="text-bakery-chocolate text-2xl md:text-3xl" />
+              <h1 className="font-playfair text-2xl md:text-3xl font-bold text-bakery-brown">
                 TastyBakes by Oma
               </h1>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10 text-xl md:text-2xl">
+          <div className="hidden md:flex items-center space-x-8 text-lg md:text-xl">
             {navigation.map((item) => (
               item.href.startsWith("/#") ? (
                 <button
